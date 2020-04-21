@@ -99,7 +99,7 @@ end
 
 function love.update(dt)
     dt = math.min(dt, 1/60)
-    key.appendBuffer()
-    key.scrolling()
-    memoryCleaner()
+    --key.appendBuffer()
+    --key.scrolling()
+    --memoryCleaner()
 end
