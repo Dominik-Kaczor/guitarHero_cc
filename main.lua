@@ -56,7 +56,7 @@ function key.scrolling()
 end
 
 function memoryCleaner()
-    cor.mem = core.mem + 1
+    core.mem = core.mem + 1
     if (core.mem == 500) then
         collectgarbage()
     end
