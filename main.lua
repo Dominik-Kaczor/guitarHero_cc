@@ -109,7 +109,7 @@ function love.update(dt)
 end
 
 function core.drawSceneGame()
-    core.ui() for i = ), core.touch do
+    core.ui() for i = 0, core.touch do
         if (buf[i] ~= nil) then
             love.graphics.setColor(0, 0.66, 0.66, 1)
             love.graphics.rectangle("fill", buf[i].x, buf[i].y, 50, 30)
