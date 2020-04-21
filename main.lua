@@ -35,3 +35,35 @@ function love.load()
     core["mem"] = 0
     key.setting()
 end
+
+function key.appendBuffer()
+    if (math.random(1000) < 25) then
+        core.touch = core.touch + 1
+        buf[core.touch] = {} buf[core.touch].x = key[math.random(4) - 1].x
+        buf[core.touch].y = -50
+    end
+end
+
+function key.scrolling()
+    for i = 0, core.touch do
+        if (buf[i] ~= nil) then
+            buf[i].y = buf[i].y + 10
+        end
+        if (buf[i] ~= nil and buf[i].y == 600) then
+            buf[i].y = nil buf[i].x = nil buf[i] = nil
+        end
+    end
+end
+
+function memoryCleaner()
+    cor.mem = core.mem + 1
+    if (core.mem == 500) then
+        collectgarbage()
+    end
+end
+
+function love.update(dt)
+    key.appendBuffer()
+    key.scrolling()
+    memoryCleaner()
+end
