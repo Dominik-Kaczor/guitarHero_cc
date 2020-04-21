@@ -27,7 +27,7 @@ end
 
 function love.load()
     success = love.window.setMode(800, 600, flags) core["scene"] = 0
-    core["touch"] = -1 *
+    core["touch"] = -1
     core["mem"] = 0
     key.setting()
 end
