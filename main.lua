@@ -28,16 +28,20 @@ function love.keyppresed(myKey)
     if myKey == "q" and key.checkClicked(100) == 1 then
         core.score = core.score + 10
     end
+    
     if myKey == "s" and key.checkClicked(175) == 1 then
         core.score = core.score + 10
     end
+    
     if myKey == "d" and key.checkClicked(250) == 1 then
         core.score = core.score + 10
     end
+    
     if myKey == "f" and key.checkClicked(325) == 1 then
         core.score = core.score + 10
     end
-    
+end
+
 function key.setting()
     key[0], key[1], key[2], key[3] = {}, {}, {}, {}
     key[0].x =100 key[0].y = -50
