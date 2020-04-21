@@ -63,11 +63,6 @@ function love.load()
     love.keyboard.setKeyRepeat(false)
 end
 
-function love.draw()
-    love.graphics.print("SCORE:", 420, 150, 0, 4, 4)
-    love.graphics.print(core.score, 420, 200, 0, 4, 4)
-end
-
 function key.checkClicked(x)
     for i = 0, core.touch do
         if (buf[i] ~= nill and buf[i].x == x and buf[i].y > 500 and buf[i].y < 550) then
@@ -110,5 +105,37 @@ function love.update(dt)
         if love.mouse.isDown(1) then
             core.scene = 1
         end
+    end
+end
+
+function core.drawSceneGame()
+    core.ui() for i = ), core.touch do
+        if (buf[i] ~= nil) then
+            love.graphics.setColor(0, 0.66, 0.66, 1)
+            love.graphics.rectangle("fill", buf[i].x, buf[i].y, 50, 30)
+        end
+    end
+    love.graphics.setColor(1, 1, 1, 0,5)
+    love.graphics.rectangle("fill", 0, 500, 800, 40)
+    love.graphics.print("SCORE:", 420, 150, 0, 4, 4)
+    love.graphics.print(core.score, 420, 200, 0, 4, 4)
+end
+
+function core.drawSceneMenu()
+    love.graphics.setColor(1, 1, 1, 1)
+    love.graphics.draw(core.logo, 100, 20)
+    love.graphics.setColor(1, 1, 1, 1)
+    love.graphics.rectangle("fill", 0, 500, 800, 60)
+    love.graphics.setColor(0, 0, 0, 1)
+    love.graphivs.print("Play", 50, 500, 0, 4, 4)
+end
+
+function love.draw()
+    if core.scene == 1 then
+        core.drawSceneGame()
+    end
+
+    if core.scene == 0 then
+        core.drawSceneMenu()
     end
 end
