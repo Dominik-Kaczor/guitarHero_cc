@@ -58,6 +58,7 @@ function memoryCleaner()
 end
 
 function love.load()
+    core["logo"] = love.graphics.newImage("logo.png")
     core["score"] = 0
     love.keyboard.setKeyRepeat(false)
 end
@@ -99,7 +100,15 @@ end
 
 function love.update(dt)
     dt = math.min(dt, 1/60)
-    --key.appendBuffer()
-    --key.scrolling()
-    --memoryCleaner()
+    if core.scene == 1 then
+        key.appendBuffer()
+        key.scrolling()
+        memoryCleaner()
+    end
+    
+    if core.scene == 0 then
+        if love.mouse.isDown(1) then
+            core.scene = 1
+        end
+    end
 end
