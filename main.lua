@@ -11,7 +11,7 @@ function key.setting()
     key[1].y = -50
     key[1].width = 50
     key[1].height = 50
-    key[1].mode = 0
+    key[1].mode = 0fewfas
     key[2].x = 250
     key[2].y = -50
     key[2].width = 50
