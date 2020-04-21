@@ -2,46 +2,6 @@ local core = {}
 local key = {}
 local buf = {}
 
-function love.load()
-    core["score"] = 0
-    love.keyboard.setKeyRepeat(false)
-end
-
-function love.draw()
-    love.graphics.print("SCORE:", 420, 150, 0, 4, 4)
-    love.graphics.print(core.score, 420, 200, 0, 4, 4)
-end
-
-function key.checkClicked(x)
-    for i = 0, core.touch do
-        if (buf[i] ~= nill and buf[i].x == x and buf[i].y > 500 and buf[i].y < 550) then
-            buf[i].y = nil
-            buf[i].x = nil
-            buf[i] = nil
-            return (i)
-        end
-    end
-    return (0)
-end
-
-function love.keyppresed(myKey)
-    if myKey == "q" and key.checkClicked(100) == 1 then
-        core.score = core.score + 10
-    end
-    
-    if myKey == "s" and key.checkClicked(175) == 1 then
-        core.score = core.score + 10
-    end
-    
-    if myKey == "d" and key.checkClicked(250) == 1 then
-        core.score = core.score + 10
-    end
-    
-    if myKey == "f" and key.checkClicked(325) == 1 then
-        core.score = core.score + 10
-    end
-end
-
 function key.setting()
     key[0], key[1], key[2], key[3] = {}, {}, {}, {}
     key[0].x =100 key[0].y = -50
@@ -94,6 +54,46 @@ function memoryCleaner()
     core.mem = core.mem + 1
     if (core.mem == 500) then
         collectgarbage()
+    end
+end
+
+function love.load()
+    core["score"] = 0
+    love.keyboard.setKeyRepeat(false)
+end
+
+function love.draw()
+    love.graphics.print("SCORE:", 420, 150, 0, 4, 4)
+    love.graphics.print(core.score, 420, 200, 0, 4, 4)
+end
+
+function key.checkClicked(x)
+    for i = 0, core.touch do
+        if (buf[i] ~= nill and buf[i].x == x and buf[i].y > 500 and buf[i].y < 550) then
+            buf[i].y = nil
+            buf[i].x = nil
+            buf[i] = nil
+            return (i)
+        end
+    end
+    return (0)
+end
+
+function love.keyppresed(myKey)
+    if myKey == "q" and key.checkClicked(100) == 1 then
+        core.score = core.score + 10
+    end
+    
+    if myKey == "s" and key.checkClicked(175) == 1 then
+        core.score = core.score + 10
+    end
+    
+    if myKey == "d" and key.checkClicked(250) == 1 then
+        core.score = core.score + 10
+    end
+    
+    if myKey == "f" and key.checkClicked(325) == 1 then
+        core.score = core.score + 10
     end
 end
 
