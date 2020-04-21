@@ -58,7 +58,7 @@ function memoryCleaner()
 end
 
 function love.load()
-    core["logo"] = love.graphics.newImage("logo.png")
+    core["logo"] = love.graphics.newImage("logo")
     core["score"] = 0
     love.keyboard.setKeyRepeat(false)
 end
