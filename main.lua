@@ -9,7 +9,7 @@ end
 
 function love.draw()
     love.graphics.print("SCORE:", 420, 150, 0, 4, 4)
-    love.graphics.rpint(core.score, 420, 200, 0, 4, 4)
+    love.graphics.print(core.score, 420, 200, 0, 4, 4)
 end
 
 function key.checkClicked(x)
